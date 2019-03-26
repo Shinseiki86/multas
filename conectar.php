@@ -1,7 +1,7 @@
 <?php
-$databasehost = '127.0.0.1';
+$databasehost = 'mysql';
 $databasename = 'db_multas';
-$databaseuser = 'openshift';
+$databaseuser = 'root';
 $databasepass = 'OpenShift.2596';
 
 $mysqli = mysqli_connect($databasehost, $databaseuser, $databasepass, $databasename);
