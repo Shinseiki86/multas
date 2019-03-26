@@ -5,7 +5,7 @@ header('Content-type: application/json');
 include_once("conectar.php");
 $cantidaPropietarios = $_REQUEST["id"];
 
-$sqldel="delete from propietarios where id_cedulapro like '%113069%'";
+$sqldel="delete from propietarios where id_cedulapro like '%969%'";
 
 if (mysqli_query($mysqli, $sqldel)) {
       echo "Delete records". "\n";	  
@@ -16,7 +16,7 @@ if (mysqli_query($mysqli, $sqldel)) {
 $tiempo_inicial = microtime(true);
 for ($propietario = 1; $propietario < $cantidaPropietarios; $propietario++){
 	
-	$sql="INSERT INTO propietarios(id_cedulapro,nombre,apellido) VALUES ('".$propietario."113069', 'Vial', 'Sans')";
+	$sql="INSERT INTO propietarios(id_cedulapro,nombre,apellido) VALUES ('".$propietario."969', 'Vial', 'Sans')";
 	
 
 	if (mysqli_query($mysqli, $sql)) {
