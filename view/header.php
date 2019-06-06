@@ -16,7 +16,6 @@
 	
 	<?php
 		session_start();
-
 		if (isset($_SESSION["rol"])) {
 			//0 = admin, 1 = user
 			if($_SESSION["rol"] == 0){

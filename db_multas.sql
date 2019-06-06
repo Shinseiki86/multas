@@ -2,10 +2,10 @@
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 19-03-2019 a las 20:40:19
--- Versión del servidor: 5.7.25
--- Versión de PHP: 5.6.40
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 29-05-2019 a las 06:06:26
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `db_multas`
 --
+CREATE DATABASE IF NOT EXISTS `db_multas` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `db_multas`;
 
 -- --------------------------------------------------------
 
@@ -2086,9 +2088,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre`, `password`, `tipo_usuario`, `id_propietario`) VALUES
-(1, 'admin', 'zxcvbnm1@', '0', 0),
+(1, 'admin', '123', '0', 0),
 (2, 'pastrana', 'qweasd1@', '1', 7532158),
-(5, 'henry', '1234', '0', 71044589);
+(5, 'henry', '1234', '0', 71044589),
+(6, 'shin', '123', '0', 11123234);
 
 -- --------------------------------------------------------
 
@@ -2154,7 +2157,7 @@ ALTER TABLE `multa`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_usuario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

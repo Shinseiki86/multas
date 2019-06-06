@@ -7,9 +7,30 @@
 <h1 class="page-header">Multas Por Vehiculo Y Propietario</h1>
 
 <div class="well well-sm text-right">
-    <a id="btn-new-multa" class="btn btn-primary" href="?c=Multa&a=Crud">Nueva Multa</a>
+    <div class="row">
+        <div class="col-xs-10">
+            <form action="#" method="get" class="sidebar-form">
+                <input type="hidden" name="c" value="multa">
+                <input type="hidden" name="a" value="Filtrar">
+                <div class="input-group">
+                    <input type="text" name="filter" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><span class="glyphicon glyphicon-search"></span>
+                </button>
+              </span>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-2">
+         <a id="btn-new-multa" class="btn btn-primary" href="?c=Multa&a=Crud">Nueva Multa</a>
+        </div>
+    </div>
 </div>
 
+<?php
+    if(isset($_REQUEST['filter']))
+        echo 'No se encuentran registros con el texto "'.$_REQUEST['filter'].'".';
+?>
 <table class="table table-striped">
     <thead>
         <tr>

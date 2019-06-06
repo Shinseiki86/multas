@@ -1,8 +1,8 @@
 <?php
-$databasehost = 'mysql';
+$databasehost = '127.0.0.1';
 $databasename = 'db_multas';
 $databaseuser = 'root';
-$databasepass = 'OpenShift.2596';
+$databasepass = '';
 
 $mysqli = mysqli_connect($databasehost, $databaseuser, $databasepass, $databasename);
 if (!$mysqli){

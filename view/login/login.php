@@ -34,38 +34,39 @@
   if($_GET && isset($_GET["close"])){
     if($_GET["close"])
       session_destroy();
+      $usuario = null;
       header('Location: ./');
   }
   
   if (!isset($_SESSION)) { session_start(); }
 
   if($_POST){
-
     $usuario = $_POST["usuario"];
     $password = $_POST["password"];
-
+    $_SESSION["login"] = false;
      foreach($this->model->ListaUsuario($usuario) as $r){
 
       if(($r->nombre != null and $r->password != null) ){
-
+        echo $r->nombre;
          if(strtoupper($r->nombre) == strtoupper($usuario) and $r->password == $password){
 
-      		$_SESSION["user"] = $usuario;
+      		  $_SESSION["user"] = $usuario;
             $_SESSION["rol"] = $r->tipo_usuario; //0 = admin, 1 = user
+            $_SESSION["login"] = true;
             header('Location: ./');
 
          }else{
-            echo '<div class="alert alert-danger" role="alert">' .
-                '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true""></span>' .
-                '<span class="sr-only">Error:</span>' .
-                'Datos ingresados no validos!' .
-                '</div>';
-		 
-
 			
         }
       }
     }
   }
 
+    if(isset($_SESSION) and isset($usuario) and $_SESSION["login"] == false){
+            echo '<div class="alert alert-danger" role="alert">' .
+                '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true""></span> ' .
+                '<span class="sr-only">Error: </span>' .
+                'Datos del usuario '.$usuario.' no válidos!' .
+                '</div>';
+    }
 ?>

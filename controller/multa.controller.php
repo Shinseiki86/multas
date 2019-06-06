@@ -58,4 +58,8 @@ class MultaController{
         $this->model->Eliminar($_REQUEST['id_multa']);
         header('Location: ./?c=multa');
     }
+
+    public function Filtrar(){
+        header('Location: ./?c=multa&filter='.$_REQUEST['filter']);
+    }
 }
